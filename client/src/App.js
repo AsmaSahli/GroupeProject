@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes ,Navigate} from "react-router-dom";
+
+import { BrowserRouter } from 'react-router-dom';
+import Header from "./components/Header";
+import SignIn from "./Pages/SignIn";
+import SignUp from "./Pages/SignUp";
+import PrivateRoute from "./components/PrivateRoute";
+import AuthentificationRoute from "./components/AuthentificationRoute";
+import Dashboard from "./Pages/Dashboard";
+import AddJob from "./Pages/AddJob";
+import ViewJob from "./Pages/ViewJob";
+import EditJob from "./Pages/EditJob";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Header/>
+      <Routes>
+      <Route element={<AuthentificationRoute/>} >
+        <Route path="/" element={<Navigate to="/signin" />} />
+        <Route path="/signin" element={< SignIn/>} />
+        <Route path="/signup" element={<SignUp/>} />
+      </Route>
+        <Route element={<PrivateRoute/>} >
+          <Route path="/dashboard" element={< Dashboard/>} />
+          <Route path="/addJob" element={< AddJob/>} />
+          <Route path="/view/:jobId" element={< ViewJob/>} />
+          <Route path="/edit/:jobId" element={< EditJob/>} />
+        </Route>
+      </Routes>
+
+    </BrowserRouter>
   );
 }
 
