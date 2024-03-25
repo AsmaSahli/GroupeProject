@@ -37,8 +37,6 @@ UserSchema.virtual("confirmPassword")
     .set(value=>this._confirmPassword=value)
 
 
-
-
 const User = mongoose.model("User", UserSchema);
 
 module.exports = User;
