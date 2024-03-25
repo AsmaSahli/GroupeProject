@@ -20,9 +20,9 @@ const JobSchema = new mongoose.Schema({
     },
 
      // user field 
-    creator : {
-        type: mongoose.Schema.Types.ObjectId, 
-        ref: 'User'
+    userId : {
+        type : String,
+        required : true,
     } 
 }, { timestamps: true }); 
 
