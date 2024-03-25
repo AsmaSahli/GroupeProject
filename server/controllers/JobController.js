@@ -53,8 +53,8 @@ module.exports = {
         });
     },
 
-    findJobsByUser : (req, res) => {
-        Job.find({creator : req.params.userId})
+    findJobByUser : (req, res) => {
+        Job.find({ userId : req.params.userId})
         .then((jobs) => {
             res.json(jobs)
         })
@@ -62,5 +62,6 @@ module.exports = {
             res.json({message : "Something went wrong", error : error})
         });
     },
+
     
 }
