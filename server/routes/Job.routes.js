@@ -1,11 +1,11 @@
-const jobController = require("../controllers/JobController");
+const JobController = require("../controllers/JobController");
 
 
 module.exports = (app) => {
-    app.get("/api/job", jobController.findAllJobs);
-    app.get("/api/job/:id", jobController.findOneJob);
-    app.post("/api/job", jobController.createJob);
-    app.patch("/api/job/:id", jobController.updateJob);
-    app.delete("/api/job/:id", jobController.deleteJob);
+    app.get("/api/job", JobController.findAllJobs);
+    app.get("/api/job/:id", JobController.findJobsByUser);
+    app.post("/api/job", JobController.createJob);
+    app.patch("/api/job/:id", JobController.updateJob);
+    app.delete("/api/job/:id", JobController.deleteJob);
 
 };

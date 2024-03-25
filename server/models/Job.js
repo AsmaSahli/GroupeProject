@@ -19,11 +19,11 @@ const JobSchema = new mongoose.Schema({
         required : [true, "Field is required"],
     },
 
-    // user field 
-    /*  creator : {
+     // user field 
+    creator : {
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'User'
-    } */
+    } 
 }, { timestamps: true }); 
 
 const Job = mongoose.model("Job", JobSchema );

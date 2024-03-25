@@ -51,7 +51,16 @@ module.exports = {
         .catch((error) => {
             res.json({message : "Something went wrong", error : error} )
         });
-    }
+    },
 
-
+    findJobsByUser : (req, res) => {
+        Job.find({creator : req.params.userId})
+        .then((jobs) => {
+            res.json(jobs)
+        })
+        .catch((error) => {
+            res.json({message : "Something went wrong", error : error})
+        });
+    },
+    
 }
