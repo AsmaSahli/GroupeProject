@@ -71,7 +71,7 @@ const AddJob = () => {
             className='flex-1'
             onChange={(e) => setLocation(e.target.value)}
     />
-    <Button type='submit' gradientMonochrome="failure">
+    <Button type='submit' gradientMonochrome="success" outline>
           Submit
     </Button>
     {publishError && (
