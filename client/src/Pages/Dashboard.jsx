@@ -77,8 +77,8 @@ const Dashboard = () => {
                         <Table.Cell>{jobItem.location}</Table.Cell>
                         <Table.Cell>
                       <div className="flex gap-2">
-                        <Link><Button gradientMonochrome="lime" outline size="xs">View</Button></Link>
-                        <Link><Button gradientMonochrome="success" outline size="xs">Add </Button></Link>
+                        <Link to={`/view/${jobItem._id}`}><Button gradientMonochrome="lime" outline size="xs">View</Button></Link>
+                        <Link ><Button gradientMonochrome="success" outline size="xs">Add </Button></Link>
                         <Link to={`/edit/${jobItem._id}`}><Button gradientMonochrome="teal" outline size="xs">Edit</Button></Link>
                         <Button gradientMonochrome="failure" outline size="xs" onClick={() => handleDelete(jobItem._id)}>Cancel</Button>
                       </div>

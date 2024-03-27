@@ -1,10 +1,10 @@
-import { useSelector} from 'react-redux';
+
 import React, { useState ,useEffect } from 'react'
 import { useNavigate , useParams } from 'react-router-dom';
 import { Alert, Button, Textarea,TextInput } from 'flowbite-react';
 
 const EditJob = () => {
-    const { currentUser } = useSelector((state) => state.user);
+
     const [error, setError] = useState(null);
     const [title, setTitle] = useState('');
     const [location, setLocation] = useState('');
@@ -60,6 +60,7 @@ const EditJob = () => {
             }
         
             setError(null);
+            navigate('/dashboard')
             } catch (error) {
             setError('Something went wrong');
             }
@@ -67,7 +68,7 @@ const EditJob = () => {
 
     return (
         <div className='max-w-lg mx-auto p-3 w-full'>
-        <h1 className='text-center text-3xl my-7 font-semibold font-mono'>Add a Job</h1>
+        <h1 className='text-center text-3xl my-7 font-semibold font-mono'>Update Job</h1>
         <form className='flex flex-col gap-4'onSubmit={handleUpdate}>
         <TextInput
                 type='text'
